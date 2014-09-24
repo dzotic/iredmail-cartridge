@@ -132,7 +132,8 @@ check_md5()
         if [ X"${RETVAL}" == X"0" ]; then
             echo -e "\t[ FAILED ]"
             ECHO_ERROR "MD5 check failed. Script exit ...\n"
-            exit 255
+            return 0
+            #exit 255
         else
             echo -e "\t[ OK ]"
             echo 'export status_fetch_misc="DONE"' >> ${STATUS_FILE}

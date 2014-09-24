@@ -1,17 +1,17 @@
-Name: tomcat5
-Cartridge-Short-Name: TOMCAT5
-Display-Name: TOMCAT5
-Description: "Jelastic Tomcat5.5"
-Version: '5.5.36'
+Name: iredmail
+Cartridge-Short-Name: iRedMail
+Display-Name: iRedMail
+Description: "Jelastic iRedMail"
+Version: '0.8.7'
 License: 'Apache licence'
 License-Url: 
 Vendor: Eclipse
-Cartridge-Version: 5.5.36
+Cartridge-Version: 0.8.7
 Cartridge-Vendor: Jelastic
 Categories:
   - service
   - embedded
-Source-Url: https://github.com/SiryjVyiko/tomcat_5.git
+Source-Url: https://github.com/dzotic/tomcat_5.git
 Website: http://jelastic.com/
 Help-Topics:
   "Developer Center": https://jelastic.com
