@@ -1,4 +1,4 @@
-Admin of domain iredmail.dev.jelastic.com:
+Admin of domain iredmail.example.com:
     * Account: postmaster
     * Password: password
 
@@ -124,7 +124,7 @@ ClamAV:
 
 DNS record for DKIM support:
 
-; key#1, domain iredmail, /var/lib/dkim/iredmail.dev.jelastic.com.pem
+; key#1, domain iredmail, /var/lib/dkim/iredmail.example.com
 dkim._domainkey.iredmail.	3600 TXT (
   "v=DKIM1; p="
   "MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDJEJFNDAx/XSdLhl0LwrYnryuv"
