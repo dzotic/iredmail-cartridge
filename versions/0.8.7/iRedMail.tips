@@ -1,11 +1,11 @@
 Admin of domain iredmail.dev.jelastic.com:
-    * Account: postmaster@iredmail.dev.jelastic.com
+    * Account: postmaster
     * Password: password
 
     You can login iRedAdmin with this account, login name is full email address.
 
 First mail user:
-    * Username: postmaster@iredmail.dev.jelastic.com
+    * Username: postmaster
     * Password: password
     * SMTP/IMAP auth type: login
     * Connection security: STARTTLS or SSL/TLS
@@ -76,8 +76,8 @@ Postfix (MySQL):
         - /etc/postfix/mysql/recipient_bcc_maps_user.cf
 Policyd (cluebringer):
     * Web UI:
-        - URL: httpS://iredmail11.dev.jelastic.com/cluebringer/
-        - Username: postmaster@iredmail.dev.jelastic.com
+        - URL: httpS://iredmail_example.com/cluebringer/
+        - Username: postmaster
         - Password: password
     * Configuration files:
         - /etc/policyd/cluebringer.conf
@@ -124,8 +124,8 @@ ClamAV:
 
 DNS record for DKIM support:
 
-; key#1, domain iredmail.dev.jelastic.com, /var/lib/dkim/iredmail.dev.jelastic.com.pem
-dkim._domainkey.iredmail.dev.jelastic.com.	3600 TXT (
+; key#1, domain iredmail, /var/lib/dkim/iredmail.pem
+dkim._domainkey.iredmail.	3600 TXT (
   "v=DKIM1; p="
   "MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDJEJFNDAx/XSdLhl0LwrYnryuv"
   "4tx7Jkw1xUcRUAcES15he5ywPWk1Q59d9mrJNxBxdaTA3nwCkFtQPBEiBR+8n99E"
@@ -163,9 +163,9 @@ iRedAdmin - official web-based admin panel:
         - /var/www/iRedAdmin-0.3.3/
         - /var/www/iRedAdmin-0.3.3/settings.py*
     * URL:
-        - https://iredmail11.dev.jelastic.com/iredadmin/
+        - https://iredmail11@example.com/iredadmin/
     * Login account:
-        - Username: postmaster@iredmail.dev.jelastic.com, password: password
+        - Username: postmaster@example.com, password: password
     * SQL database account:
         - Database name: iredadmin
         - Username: iredadmin
@@ -182,11 +182,11 @@ Awstats:
         - /etc/awstats/awstats.smtp.conf
         - /etc/httpd/conf.d/awstats.conf
     * Login account:
-        - Username: postmaster@iredmail.dev.jelastic.com, password: password
+        - Username: postmaster@example.com, password: password
     * URL:
-        - https://iredmail11.dev.jelastic.com/awstats/awstats.pl
-        - https://iredmail11.dev.jelastic.com/awstats/awstats.pl?config=web
-        - https://iredmail11.dev.jelastic.com/awstats/awstats.pl?config=smtp
+        - https://example.com/awstats/awstats.pl
+        - https://example.com/awstats/awstats.pl?config=web
+        - https://example.com/awstats/awstats.pl?config=smtp
     * Crontab job:
         shell> crontab -l root
 
@@ -195,10 +195,10 @@ Roundcube webmail:
         - /var/www/roundcubemail-1.0.1/
         - /var/www/roundcubemail-1.0.1/config/
     * URL:
-        - http://iredmail11.dev.jelastic.com/mail/
-        - https://iredmail11.dev.jelastic.com/mail/ (Over SSL/TLS)
+        - http://example.com/mail/
+        - https://example.com/mail/ (Over SSL/TLS)
     * Login account:
-        - Username: postmaster@iredmail.dev.jelastic.com, password: password
+        - Username: postmaster, password: password
     * See also:
         - /etc/httpd/conf.d/roundcubemail.conf
 
@@ -211,7 +211,7 @@ phpMyAdmin:
         - Username: vmailadmin, password: abtQOhMX0WNuuw9QtqtJUuI7nVVnXi
         - Username (read-only): vmail, password: OeRroX165V0pWElJlNl6PPvK2jbgZU
     * URL:
-        - https://iredmail11.dev.jelastic.com/phpmyadmin
+        - https://example.com/phpmyadmin
     * See also:
         - /etc/httpd/conf.d/phpmyadmin.conf
 
