@@ -1,0 +1,11 @@
+#!/bin/bash -e
+
+set -u
+
+for dir in logs tmp pid cache  env; do
+	mkdir -p $dir
+done
+[ -d "/opt/repo/logs" ] && rmdir /opt/repo/logs
+mkdir -p /opt/repo/versions/5.5.36/logs
+ln -s /opt/repo/versions/5.5.36/logs /opt/repo/logs
+

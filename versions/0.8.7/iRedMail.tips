@@ -1,0 +1,221 @@
+Admin of domain iredmail.dev.jelastic.com:
+    * Account: postmaster@iredmail.dev.jelastic.com
+    * Password: password
+
+    You can login iRedAdmin with this account, login name is full email address.
+
+First mail user:
+    * Username: postmaster@iredmail.dev.jelastic.com
+    * Password: password
+    * SMTP/IMAP auth type: login
+    * Connection security: STARTTLS or SSL/TLS
+
+    You can login webmail with this account, login name is full email address.
+
+
+SSL cert keys (size: 2048):
+    - /etc/pki/tls/certs/iRedMail_CA.pem
+    - /etc/pki/tls/private/iRedMail.key
+
+Mail Storage:
+    - Root directory: /var/vmail
+    - Mailboxes: /var/vmail/vmail1
+    - Backup scripts and copies: /var/vmail/backup
+
+Apache:
+    * Configuration files:
+        - /etc/httpd
+        - /etc/httpd/conf/httpd.conf
+        - /etc/httpd/conf.d/*
+    * Directories:
+        - /var/www
+        - /var/www/html
+    * See also:
+        - /var/www/html/index.html
+
+PHP:
+    * Configuration file: /etc/php.ini
+    * Disabled functions: show_source,system,shell_exec,passthru,exec,phpinfo,proc_open
+
+MySQL:
+    * Root user: root, Password: password
+    * Bind account (read-only):
+        - Username: vmail, Password: OeRroX165V0pWElJlNl6PPvK2jbgZU
+    * Vmail admin account (read-write):
+        - Username: vmailadmin, Password: abtQOhMX0WNuuw9QtqtJUuI7nVVnXi
+    * RC script: /etc/init.d/mysqld
+    * See also:
+        - /opt/repo/versions/0.8.7/conf/mysql_init.sql
+
+Virtual Users:
+    - /opt/repo/versions/0.8.7/samples/iredmail.mysql
+    - /opt/repo/versions/0.8.7/conf/mysql_vmail.sql
+
+Postfix (basic):
+    * Configuration files:
+        - /etc/postfix
+        - /etc/postfix/aliases
+        - /etc/postfix/main.cf
+        - /etc/postfix/master.cf
+
+Postfix (MySQL):
+    * Configuration files:
+        - /etc/postfix/mysql/transport_maps_domain.cf
+        - /etc/postfix/mysql/transport_maps_user.cf
+        - /etc/postfix/mysql/virtual_mailbox_domains.cf
+        - /etc/postfix/mysql/relay_domains.cf
+        - /etc/postfix/mysql/virtual_mailbox_maps.cf
+        - /etc/postfix/mysql/virtual_alias_maps.cf
+        - /etc/postfix/mysql/domain_alias_maps.cf
+        - /etc/postfix/mysql/catchall_maps.cf
+        - /etc/postfix/mysql/domain_alias_catchall_maps.cf
+        - /etc/postfix/mysql/sender_login_maps.cf
+        - /etc/postfix/mysql/sender_bcc_maps_domain.cf
+        - /etc/postfix/mysql/sender_bcc_maps_user.cf
+        - /etc/postfix/mysql/recipient_bcc_maps_domain.cf
+        - /etc/postfix/mysql/recipient_bcc_maps_user.cf
+Policyd (cluebringer):
+    * Web UI:
+        - URL: httpS://iredmail11.dev.jelastic.com/cluebringer/
+        - Username: postmaster@iredmail.dev.jelastic.com
+        - Password: password
+    * Configuration files:
+        - /etc/policyd/cluebringer.conf
+        - /etc/policyd/webui.conf
+    * RC script:
+        - /etc/init.d/cbpolicyd
+    * Database:
+        - Database name: cluebringer
+        - Database user: cluebringer
+        - Database password: SeyBpMXQfk6fI0XP58KG5q9n6BrqXI
+
+    * Log file:
+        - /etc/rsyslog.conf
+        - 
+
+Dovecot:
+    * Configuration files:
+        - /etc/dovecot/dovecot.conf
+        - /etc/dovecot/dovecot-ldap.conf (For OpenLDAP backend)
+        - /etc/dovecot/dovecot-mysql.conf (For MySQL backend)
+        - /etc/dovecot/dovecot-pgsql.conf (For PostgreSQL backend)
+        - /etc/dovecot/dovecot-used-quota.conf (For real-time quota usage)
+        - /etc/dovecot/dovecot-share-folder.conf (For IMAP sharing folder)
+    * RC script: /etc/init.d/dovecot
+    * Log files:
+        - /var/log/dovecot.log
+        - /var/log/dovecot-sieve.log
+        - /var/log/dovecot-lmtp.log
+    * See also:
+        - /var/vmail/sieve/dovecot.sieve
+        - Logrotate config file: /etc/logrotate.d/dovecot
+
+ClamAV:
+    * Configuration files:
+        - /etc/clamd.conf
+        - /etc/freshclam.conf
+        - /etc/logrotate.d/clamav
+    * RC scripts:
+            + /etc/init.d/clamd
+            + /etc/init.d/freshclamd
+    * Log files:
+        - /var/log/clamav/clamd.log
+        - /var/log/clamav/freshclam.log
+
+DNS record for DKIM support:
+
+; key#1, domain iredmail.dev.jelastic.com, /var/lib/dkim/iredmail.dev.jelastic.com.pem
+dkim._domainkey.iredmail.dev.jelastic.com.	3600 TXT (
+  "v=DKIM1; p="
+  "MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDJEJFNDAx/XSdLhl0LwrYnryuv"
+  "4tx7Jkw1xUcRUAcES15he5ywPWk1Q59d9mrJNxBxdaTA3nwCkFtQPBEiBR+8n99E"
+  "zocbHh3ePsPQle3uBe47h/TZWREiZvcoNGLKcUXhLrC+UTmPWZB6+4YOPcSDxjFr"
+  "C9o+Fvp64vlbnp9vGQIDAQAB")
+Amavisd-new:
+    * Configuration files:
+        - /etc/amavisd/amavisd.conf
+        - /etc/postfix/master.cf
+        - /etc/postfix/main.cf
+    * RC script:
+        - /etc/init.d/amavisd
+    * MySQL Database:
+        - Database name: amavisd
+        - Database user: amavisd
+        - Database password: q38P19w1tvS2ovy7gnH6z8HLN06rLT
+        - SQL template: /opt/repo/versions/0.8.7/samples/amavisd/amavisd-2.7.0.mysql
+
+SpamAssassin:
+    * Configuration files and rules:
+        - /etc/mail/spamassassin
+        - /etc/mail/spamassassin/local.cf
+
+iRedAPD - Postfix Policy Daemon:
+    * Version: 1.4.3
+    * Listen address: 127.0.0.1, port: 7777
+    * Related files:
+        - /opt/iRedAPD-1.4.3/
+        - /opt/iredapd/
+        - /opt/iredapd/etc/settings.py
+
+iRedAdmin - official web-based admin panel:
+    * Version: 0.3.3
+    * Configuration files:
+        - /var/www/iRedAdmin-0.3.3/
+        - /var/www/iRedAdmin-0.3.3/settings.py*
+    * URL:
+        - https://iredmail11.dev.jelastic.com/iredadmin/
+    * Login account:
+        - Username: postmaster@iredmail.dev.jelastic.com, password: password
+    * SQL database account:
+        - Database name: iredadmin
+        - Username: iredadmin
+        - Password: niFw80uMSqZ6Eup22aZIysKVSsy5JE
+    * Settings:
+        - /var/www/iRedAdmin-0.3.3/settings.py
+    * See also:
+        - /etc/httpd/conf.d/iredadmin.conf
+
+Awstats:
+    * Configuration files:
+        - /etc/awstats
+        - /etc/awstats/awstats.web.conf
+        - /etc/awstats/awstats.smtp.conf
+        - /etc/httpd/conf.d/awstats.conf
+    * Login account:
+        - Username: postmaster@iredmail.dev.jelastic.com, password: password
+    * URL:
+        - https://iredmail11.dev.jelastic.com/awstats/awstats.pl
+        - https://iredmail11.dev.jelastic.com/awstats/awstats.pl?config=web
+        - https://iredmail11.dev.jelastic.com/awstats/awstats.pl?config=smtp
+    * Crontab job:
+        shell> crontab -l root
+
+Roundcube webmail:
+    * Configuration files:
+        - /var/www/roundcubemail-1.0.1/
+        - /var/www/roundcubemail-1.0.1/config/
+    * URL:
+        - http://iredmail11.dev.jelastic.com/mail/
+        - https://iredmail11.dev.jelastic.com/mail/ (Over SSL/TLS)
+    * Login account:
+        - Username: postmaster@iredmail.dev.jelastic.com, password: password
+    * See also:
+        - /etc/httpd/conf.d/roundcubemail.conf
+
+phpMyAdmin:
+    * Configuration files:
+        - /var/www/phpMyAdmin-4.2.0-all-languages
+        - /var/www/phpMyAdmin-4.2.0-all-languages/config.inc.php
+    * Login account:
+        - Username: root, password: password
+        - Username: vmailadmin, password: abtQOhMX0WNuuw9QtqtJUuI7nVVnXi
+        - Username (read-only): vmail, password: OeRroX165V0pWElJlNl6PPvK2jbgZU
+    * URL:
+        - https://iredmail11.dev.jelastic.com/phpmyadmin
+    * See also:
+        - /etc/httpd/conf.d/phpmyadmin.conf
+
+Backup MySQL database:
+    * Script: /var/vmail/backup/backup_mysql.sh
+    * See also:
+        # crontab -l -u root
