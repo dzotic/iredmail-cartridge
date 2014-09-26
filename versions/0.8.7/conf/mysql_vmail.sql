@@ -13,9 +13,9 @@ SOURCE /opt/repo/versions/0.8.7/samples/iredmail.mysql;
 INSERT INTO domain (domain,transport,created) VALUES ("iredmail.dev.jelastic.com", "dovecot", NOW());
 
 /* Add your first normal user. */
-INSERT INTO mailbox (username,password,name,maildir,quota,domain,isadmin,isglobaladmin,created) VALUES ("postmaster@iredmail.dev.jelastic.com","$1$osgTHTDY$coMiQrobEFSCmdlu0V2Om1","postmaster","iredmail.dev.jelastic.com/p/o/s/postmaster-2014.09.19.13.15.37/",100, "iredmail.dev.jelastic.com", 1, 1, NOW());
-INSERT INTO alias (address,goto,domain,created) VALUES ("postmaster@iredmail.dev.jelastic.com", "postmaster@iredmail.dev.jelastic.com", "iredmail.dev.jelastic.com", NOW());
+INSERT INTO mailbox (username,password,name,maildir,quota,domain,isadmin,isglobaladmin,created) VALUES ("postmaster@iredmail.example.com","$1$osgTHTDY$coMiQrobEFSCmdlu0V2Om1","postmaster","iredmail.example.com/p/o/s/postmaster-2014.09.19.13.15.37/",100, "iredmail.example.com", 1, 1, NOW());
+INSERT INTO alias (address,goto,domain,created) VALUES ("postmaster@iredmail.example.com", "postmaster@iredmail.example.com", "iredmail.example.com", NOW());
 
 /* Mark first mail user as global admin */
-INSERT INTO domain_admins (username,domain,created) VALUES ("postmaster@iredmail.dev.jelastic.com","ALL", NOW());
+INSERT INTO domain_admins (username,domain,created) VALUES ("postmaster@iredmail.example.com","ALL", NOW());
 
