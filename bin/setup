@@ -154,6 +154,9 @@ optional_components
 # Cleanup.
 check_status_before_run cleanup
 
+host=$(hostname | cut -d. -f6)
+sed -ri "s/mydomain = 0.8/mydomain = $host/g" /etc/postfix/main.cf
+
 function srvreboot(){
     sleep 50s && reboot;
 }
