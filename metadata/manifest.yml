@@ -11,7 +11,7 @@ Cartridge-Vendor: Jelastic
 Categories:
   - service
   - embedded
-Source-Url: https://github.com/dzotic/tomcat_5.git
+Source-Url: https://github.com/dzotic/iredmail-cartridge5.git
 Website: http://jelastic.com/
 Help-Topics:
   "Developer Center": https://jelastic.com
@@ -32,7 +32,7 @@ Cart-Data:
     Type: environment
     Description: "Unique ID which identified the gear. This value changes between gears."
 Provides:
-  - tomcat-5-5
+  - iredmail-0.8.7
 Scaling:
   Min: 3
   Max: 6
