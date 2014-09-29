@@ -139,7 +139,8 @@ cleanup_replace_firewall_rules()
 
             # Prompt to restart iptables.
             ECHO_QUESTION -n "Restart firewall now (with SSHD port ${sshd_port})? [y|N]"
-            read_setting ${AUTO_CLEANUP_RESTART_IPTABLES}
+            #read_setting ${AUTO_CLEANUP_RESTART_IPTABLES}
+            ANSWER=y
             case $ANSWER in
                 Y|y )
                     ECHO_INFO "Restarting firewall ..."
@@ -170,7 +171,8 @@ cleanup_replace_mysql_config()
         # this config file replacement.
         ECHO_QUESTION "Would you like to use MySQL configuration file shipped within iRedMail now?"
         ECHO_QUESTION -n "File: ${MYSQL_MY_CNF}. [Y|n]"
-        read_setting ${AUTO_CLEANUP_REPLACE_MYSQL_CONFIG}
+        #read_setting ${AUTO_CLEANUP_REPLACE_MYSQL_CONFIG}
+        ANSWER=y
         case $ANSWER in
             N|n ) ECHO_INFO "Skip copy and modify MySQL config file." ;;
             Y|y|* )
