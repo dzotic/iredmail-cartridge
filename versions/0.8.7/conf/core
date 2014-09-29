@@ -115,7 +115,7 @@ ECHO_DEBUG()
 
 read_setting()
 {
-    answer="y"
+    answer="${1}"
     if [ ! -z "${answer}" ]; then
         ANSWER="${answer}"
         echo ${ANSWER}
@@ -169,7 +169,9 @@ check_hostname()
 {
     echo ${HOSTNAME} | grep '\.' >/dev/null 2>&1
     [ X"$?" != X"0" ] && \
-        return 0;
+        ECHO_ERROR "Please configure a fully qualified domain name (FQDN) in /etc/hosts before we go further.\n\nExample:\n\n127.0.0.1   mail.iredmail.org mail localhost\n" && \
+        #exit 255
+	return 0
 }
 
 check_pkg()

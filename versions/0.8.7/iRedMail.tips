@@ -1,11 +1,11 @@
-Admin of domain iredmail.example.com:
-    * Account: postmaster
+Admin of domain example.com:
+    * Account: postmaster@example.com
     * Password: password
 
     You can login iRedAdmin with this account, login name is full email address.
 
 First mail user:
-    * Username: postmaster
+    * Username: postmaster@example.com
     * Password: password
     * SMTP/IMAP auth type: login
     * Connection security: STARTTLS or SSL/TLS
@@ -40,16 +40,16 @@ PHP:
 MySQL:
     * Root user: root, Password: password
     * Bind account (read-only):
-        - Username: vmail, Password: OeRroX165V0pWElJlNl6PPvK2jbgZU
+        - Username: vmail, Password: H8rcg9QrlnsbXLd5HyDm2UgDwhKzel
     * Vmail admin account (read-write):
-        - Username: vmailadmin, Password: abtQOhMX0WNuuw9QtqtJUuI7nVVnXi
+        - Username: vmailadmin, Password: IOaUUSBXg43Dk8GMTWnO0J2jVXJOkh
     * RC script: /etc/init.d/mysqld
     * See also:
-        - /opt/repo/versions/0.8.7/conf/mysql_init.sql
+        - /opt/repo/conf/mysql_init.sql
 
 Virtual Users:
-    - /opt/repo/versions/0.8.7/samples/iredmail.mysql
-    - /opt/repo/versions/0.8.7/conf/mysql_vmail.sql
+    - /opt/repo/samples/iredmail.mysql
+    - /opt/repo/conf/mysql_vmail.sql
 
 Postfix (basic):
     * Configuration files:
@@ -76,8 +76,8 @@ Postfix (MySQL):
         - /etc/postfix/mysql/recipient_bcc_maps_user.cf
 Policyd (cluebringer):
     * Web UI:
-        - URL: httpS://iredmail.example.com/cluebringer/
-        - Username: postmaster
+        - URL: httpS://localhost/cluebringer/
+        - Username: postmaster@example.com
         - Password: password
     * Configuration files:
         - /etc/policyd/cluebringer.conf
@@ -87,7 +87,7 @@ Policyd (cluebringer):
     * Database:
         - Database name: cluebringer
         - Database user: cluebringer
-        - Database password: SeyBpMXQfk6fI0XP58KG5q9n6BrqXI
+        - Database password: TNfhrC3jqh3Zo2j9G8I5Axs9gEOYHA
 
     * Log file:
         - /etc/rsyslog.conf
@@ -124,13 +124,13 @@ ClamAV:
 
 DNS record for DKIM support:
 
-; key#1, domain iredmail, /var/lib/dkim/iredmail.example.com
-dkim._domainkey.iredmail.	3600 TXT (
+; key#1, domain example.com, /var/lib/dkim/example.com.pem
+dkim._domainkey.example.com.	3600 TXT (
   "v=DKIM1; p="
-  "MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDJEJFNDAx/XSdLhl0LwrYnryuv"
-  "4tx7Jkw1xUcRUAcES15he5ywPWk1Q59d9mrJNxBxdaTA3nwCkFtQPBEiBR+8n99E"
-  "zocbHh3ePsPQle3uBe47h/TZWREiZvcoNGLKcUXhLrC+UTmPWZB6+4YOPcSDxjFr"
-  "C9o+Fvp64vlbnp9vGQIDAQAB")
+  "MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDBbHpBcDSTit3D3LQv68RD4och"
+  "D5uHvSzR49VzB2w9XB3dokLl+cssG0LIcfJiDmguubFBsc8DWoyKPSQ97MFMyKKd"
+  "70symytGDh5EEEmP/RSFqOCoOHyjelWoK+ciB//UhdjGKY9JJwbrNRPOorLEUGPg"
+  "nrHY+g8ieJc/LuHAvQIDAQAB")
 Amavisd-new:
     * Configuration files:
         - /etc/amavisd/amavisd.conf
@@ -141,8 +141,8 @@ Amavisd-new:
     * MySQL Database:
         - Database name: amavisd
         - Database user: amavisd
-        - Database password: q38P19w1tvS2ovy7gnH6z8HLN06rLT
-        - SQL template: /opt/repo/versions/0.8.7/samples/amavisd/amavisd-2.7.0.mysql
+        - Database password: noHWYx6OrwNopAWqNW9FxGV7VGA78g
+        - SQL template: /opt/repo/samples/amavisd/amavisd-2.7.0.mysql
 
 SpamAssassin:
     * Configuration files and rules:
@@ -163,13 +163,13 @@ iRedAdmin - official web-based admin panel:
         - /var/www/iRedAdmin-0.3.3/
         - /var/www/iRedAdmin-0.3.3/settings.py*
     * URL:
-        - https://iredmail@example.com/iredadmin/
+        - https://localhost/iredadmin/
     * Login account:
         - Username: postmaster@example.com, password: password
     * SQL database account:
         - Database name: iredadmin
         - Username: iredadmin
-        - Password: niFw80uMSqZ6Eup22aZIysKVSsy5JE
+        - Password: qQgVaos5VMZUjhQcOReyKZchycFmSH
     * Settings:
         - /var/www/iRedAdmin-0.3.3/settings.py
     * See also:
@@ -184,9 +184,9 @@ Awstats:
     * Login account:
         - Username: postmaster@example.com, password: password
     * URL:
-        - https://iredmail@example.com/awstats/awstats.pl
-        - https://iredmail.example.com/awstats/awstats.pl?config=web
-        - https://iredmail.example.com/awstats/awstats.pl?config=smtp
+        - https://localhost/awstats/awstats.pl
+        - https://localhost/awstats/awstats.pl?config=web
+        - https://localhost/awstats/awstats.pl?config=smtp
     * Crontab job:
         shell> crontab -l root
 
@@ -195,8 +195,8 @@ Roundcube webmail:
         - /var/www/roundcubemail-1.0.1/
         - /var/www/roundcubemail-1.0.1/config/
     * URL:
-        - http://iredmail.example.com/mail/
-        - https://iredmail.example.com/mail/ (Over SSL/TLS)
+        - http://localhost/mail/
+        - https://localhost/mail/ (Over SSL/TLS)
     * Login account:
         - Username: postmaster@example.com, password: password
     * See also:
@@ -208,10 +208,10 @@ phpMyAdmin:
         - /var/www/phpMyAdmin-4.2.0-all-languages/config.inc.php
     * Login account:
         - Username: root, password: password
-        - Username: vmailadmin, password: abtQOhMX0WNuuw9QtqtJUuI7nVVnXi
-        - Username (read-only): vmail, password: OeRroX165V0pWElJlNl6PPvK2jbgZU
+        - Username: vmailadmin, password: IOaUUSBXg43Dk8GMTWnO0J2jVXJOkh
+        - Username (read-only): vmail, password: H8rcg9QrlnsbXLd5HyDm2UgDwhKzel
     * URL:
-        - https://iredmail.example.com/phpmyadmin
+        - https://localhost/phpmyadmin
     * See also:
         - /etc/httpd/conf.d/phpmyadmin.conf
 
