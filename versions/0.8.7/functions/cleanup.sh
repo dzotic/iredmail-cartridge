@@ -51,7 +51,8 @@ cleanup_remove_sendmail()
 
     if [ X"$?" == X"0" ]; then
         ECHO_QUESTION -n "Would you like to *REMOVE* sendmail now? [Y|n]"
-        read_setting ${AUTO_CLEANUP_REMOVE_SENDMAIL}
+        #read_setting ${AUTO_CLEANUP_REMOVE_SENDMAIL}
+        ANSWER=y
         case $ANSWER in
             N|n )
                 ECHO_INFO "Disable sendmail, it is replaced by Postfix." && \
@@ -107,7 +108,8 @@ cleanup_replace_firewall_rules()
 
     ECHO_QUESTION "Would you like to use firewall rules provided by iRedMail now?"
     ECHO_QUESTION -n "File: ${FIREWALL_RULE_CONF}, with SSHD port: ${sshd_port}. [Y|n]"
-    read_setting ${AUTO_CLEANUP_REPLACE_FIREWALL_RULES}
+    #read_setting ${AUTO_CLEANUP_REPLACE_FIREWALL_RULES}
+    ANSWER=n
     case $ANSWER in
         N|n ) ECHO_INFO "Skip firewall rules." ;;
         Y|y|* ) 
