@@ -41,4 +41,16 @@ Endpoints:
     Private-Port-Name: APP_PORT
     Private-Port:      8080
     Public-Port-Name:  APP_PROXY_PORT
+  - Private-IP-Name:   HTTP_HOST
+    Private-Port-Name: HTTP_PORT
+    Private-Port:      80
+  - Private-IP-Name:   DB_HOST
+    Private-Port-Name: DB_HOST
+    Private-Port:      25
+  - Private-IP-Name:   HTTPS_HOST
+    Private-Port-Name: HTTPS_PORT
+    Private-Port:      443
+  - Private-IP-Name:   IMAP_HOST
+    Private-Port-Name: IMAP_PORT
+    Private-Port:      587
 
